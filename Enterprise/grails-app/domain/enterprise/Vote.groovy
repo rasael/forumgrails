@@ -6,7 +6,6 @@ class Vote {
     static belongsTo = [post:Post]
 
     def constraint = {
-        value > 0;
-        value <= 10;
+        value (min: 0, max:10)
     }
 }
