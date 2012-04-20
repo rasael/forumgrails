@@ -5,7 +5,7 @@ class Argument {
     String name
     static hasMany = [threads:Thread]
     static belongsTo = [course:Course]
-    static transients = ['getPostsCount']    
+    static transients = ['postsCount']
     // Validation
     static constrains = {
         name blank:false, size:3..100,nullable:false

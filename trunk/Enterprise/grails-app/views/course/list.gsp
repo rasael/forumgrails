@@ -15,10 +15,9 @@
     <hr>
     <table border="1" width="100%">
       <tr><th>Course name</th><th>Informations</th></tr>
-      <% int i = 0 %>
       <g:each var="course" in="${Course.list()}">
         <tr>
-          <td style="vertical-align: top"><a href="Course/show?id=${i++}">${course.name}</a></td>
+          <td style="vertical-align: top"><a href="/Enterprise/course/show?id=${course.id}">${course.name}</a></td>
           <td>
             Arguments: ${course.arguments.size()}<br>
             Threads: ${course.getThreadsCount()}<br>
