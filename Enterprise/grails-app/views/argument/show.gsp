@@ -8,26 +8,24 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Course view</title>
+    <title>Argument view</title>
 </head>
 
 <body>
-<h1><%=course.name%></h1>
+<h1><%=argument.name%></h1>
 <hr>
-Arguments: <%=course.arguments.size()%><br>
-Threads: <%=course.getThreadsCount()%><br>
-Posts: <%=course.getPostsCount()%><br>
+Threads: <%=argument.threads.size()%><br>
+Posts: <%=argument.getPostsCount()%><br>
 <hr>
 <table border="1" width="100%">
 
     <tr><th>Argument name</th><th>Informations</th></tr>
 
-    <g:each var="argument" in="${course.arguments}">
+    <g:each var="thread" in="${argument.threads}">
         <tr>
-            <td style="vertical-align: top"><a href="/Enterprise/argument/show?id=${argument.id}">${argument.name}</a></td>
+            <td style="vertical-align: top"><a href="/Enterprise/thread/show?id=${thread.id}">${thread.title}</a></td>
             <td>
-                Threads: ${argument.threads.size()}<br>
-                Posts: ${argument.getPostsCount()}<br>
+                Posts: ${thread.posts.size()}<br>
             </td>
         </tr>
     </g:each>
