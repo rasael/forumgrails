@@ -6,29 +6,36 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Course list</title>
-  </head>
-  <body>
-    <h1>Course list</h1>
-    <hr>
-    <table border="1" width="100%">
-      <tr><th>Course name</th><th>Informations</th></tr>
-      <g:each var="course" in="${Course.list()}">
+</head>
+
+<body>
+<h1>Course list</h1>
+<hr>
+<table border="1" width="100%">
+    <tr><th>Course name</th><th>Informations</th></tr>
+    <g:each var="course" in="${Course.list()}">
         <tr>
-          <td style="vertical-align: top"><a href="/Enterprise/course/show?id=${course.id}">${course.name}</a></td>
-          <td>
-            Arguments: ${course.arguments.size()}<br>
-            Threads: ${course.getThreadsCount()}<br>
-            Posts: ${course.getPostsCount()}<br>
-          </td>
+            <td style="vertical-align: top"><a href="/Enterprise/course/show?id=${course.id}">${course.name}</a>
+                <br><ul>
+                <g:each var="argument" in="${course.arguments}">
+                    <li><a href="/Enterprise/argument/show?id=${argument.id}">${argument.name}</a></li>
+                </g:each>
+            </ul>
+            </td>
+            <td>
+                Arguments: ${course.arguments.size()}<br>
+                Threads: ${course.getThreadsCount()}<br>
+                Posts: ${course.getPostsCount()}<br>
+            </td>
         </tr>
-      </g:each>
-    </table>
-    <hr>
-    Total of <%=Course.count()%> courses
-    <hr>
-<%=  new Date() %>
-  </body>
+    </g:each>
+</table>
+<hr>
+Total of <%=Course.count()%> courses
+<hr>
+<%=new Date()%>
+</body>
 </html>

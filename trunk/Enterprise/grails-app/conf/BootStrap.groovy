@@ -37,7 +37,7 @@ class BootStrap {
             thread2.addToPosts(post3)
 
             Argument arg2 = new Argument(name:'Metaeuristiche')
-            arg1.addToThreads(thread2)
+            arg2.addToThreads(thread2)
             
             Course course2 = new Course(name:'Algoritmi avanzati')
             course2.addToArguments(arg2)
