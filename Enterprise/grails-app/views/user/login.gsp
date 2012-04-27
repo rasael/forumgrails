@@ -17,8 +17,14 @@
 <hr>
 <div class="body">
   <g:form action="doLogin" method="post">
+    <input type="hidden" name="ref" value="${request.getHeader('referer')}"/>
     <div class="dialog">
       <p>Enter your login details below:</p>
+      <g:if test="${flash.message}">
+        <br>
+        ${flash.message}
+        <br>
+      </g:if>      
       <table class="userForm">
         <tr class='prop'>
           <td valign='top' style='text-align:left;' width='20%'>
