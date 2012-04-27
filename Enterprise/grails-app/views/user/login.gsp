@@ -27,7 +27,7 @@
           <td valign='top' style='text-align:left;' width='80%'>
             <input id="email" type='text' name='email' value='${user?.email}' />
           </td>
-          <td>forumgrails&#64;supsi.ch</td>
+          <td>a&#64;b.c</td>
         </tr>
         <tr class='prop'>
           <td valign='top' style='text-align:left;' width='20%'>
@@ -37,7 +37,7 @@
             <input id="password" type='password' name='password'
                    value='${user?.password}' />
           </td>
-          <td>forumpassword</td>
+          <td>abc</td>
         </tr>
       </table>
     </div>
