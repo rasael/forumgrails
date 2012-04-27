@@ -4,6 +4,8 @@ class BootStrap {
 
     def init = { servletContext ->
         
+        new User(email:"forumgrails@supsi.ch",password:"forumpassword").save();
+        
         // Create sample objects
         if(!Argument.count()){
             log.println("Argument count is empty, creating sample objects");
