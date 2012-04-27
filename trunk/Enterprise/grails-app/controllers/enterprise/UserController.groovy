@@ -8,8 +8,10 @@ class UserController {
         def user = User.findWhere(email:params["email"],password:params["password"])
         session.user = user
         if(user){
-            redirect(controller:"Course",action:"add")
+            def path = params.ref.substring(params.ref.indexOf(request.getContextPath())+request.getContextPath().length());
+            redirect(url:path)
         }else{
+            flash.message = "Login errato"
             redirect(controller:"user",action:"login",params:[email:params["email"]])
         }
     }
