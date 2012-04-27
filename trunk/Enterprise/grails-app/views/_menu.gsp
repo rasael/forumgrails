@@ -7,7 +7,7 @@
             </li>
         </ul>
         <ul>
-            <li><a href="#" class="top_parent">Corsi</a>
+            <li><a href="#" class="top_parent"><g:message code="forumgrails.courseList" /></a>
                 <ul>
                 <g:each var="course2" in="${Course.list()}">
                       <li><a href="/Enterprise/course/show?id=${course2.id}" class="parent">${course2.name}</a>
