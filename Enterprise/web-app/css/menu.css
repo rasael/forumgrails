@@ -35,7 +35,7 @@
 #menuh a:hover						/* menu on mouse-over  */
 	{
 	color: white;
-	background-color: #abbf78;
+	background-color: #48802c;
 	text-decoration:none;
 	}	
 	
@@ -59,7 +59,7 @@
 	margin:0;
 	padding:0;
 	float:left;
-	width:10em;	/* width of all menu boxes */
+	width:17em;	/* width of all menu boxes */
 	/* NOTE: For adjustable menu boxes you can comment out the above width rule.
 	However, you will have to add padding in the "#menh a" rule so that the menu boxes
 	will have space on either side of the text -- try it */
