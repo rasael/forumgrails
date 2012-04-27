@@ -16,10 +16,7 @@
 <h1><%=course.name%></h1>
 <hr>
 <g:render template="../header"/>
-<hr>
-Arguments: <%=course.arguments.size()%><br>
-Threads: <%=course.getThreadsCount()%><br>
-Posts: <%=course.getPostsCount()%><br>
+<br><br> <br>
 <hr>
 <table border="1" width="100%">
 

@@ -16,6 +16,7 @@
  <h1><g:message code="forumgrails.courseList" /></h1>
   <hr>
 <g:render template="../header"/>
+<br><br> <br>
 <hr>
 <table border="1" width="100%">
   <tr><th><g:message code="forumgrails.courseName"/></th><th><g:message code="forumgrails.information"/></th></tr>
