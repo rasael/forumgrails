@@ -9,13 +9,13 @@
         <ul>
             <li><a href="#" class="top_parent">Corsi</a>
                 <ul>
-                    <g:each var="course2" in="${Course.list()}">
-                        <a href="/Enterprise/course/show?id=${course2.id}">${course2.name}</a>
+                <g:each var="course2" in="${Course.list()}">
+                      <li><a href="/Enterprise/course/show?id=${course2.id}" class="parent">${course2.name}</a>
                         <ul>
-                            <li><g:each var="argument" in="${course2.arguments}">
-                                <a href="/Enterprise/argument/show?id=${argument.id}">${argument.name}</a>
-                            </g:each> </li>
-                        </ul>
+                            <g:each var="argument" in="${course2.arguments}">
+                            <li><a href="/Enterprise/argument/show?id=${argument.id}">${argument.name}</a></li>
+                            </g:each>
+                        </ul></li>
                     </g:each>
                 </ul>
             </li>
