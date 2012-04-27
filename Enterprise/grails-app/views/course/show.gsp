@@ -8,11 +8,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <g:render template="../css"/>
     <title>Course view</title>
 </head>
 
 <body>
 <h1><%=course.name%></h1>
+<hr>
+<g:render template="../header"/>
 <hr>
 Arguments: <%=course.arguments.size()%><br>
 Threads: <%=course.getThreadsCount()%><br>
@@ -24,7 +27,8 @@ Posts: <%=course.getPostsCount()%><br>
 
     <g:each var="argument" in="${course.arguments}">
         <tr>
-            <td style="vertical-align: top"><a href="/Enterprise/argument/show?id=${argument.id}">${argument.name}</a></td>
+            <td style="vertical-align: top">
+              <a href="/Enterprise/argument/show?id=${argument.id}">${argument.name}</a></td>
             <td>
                 Threads: ${argument.threads.size()}<br>
                 Posts: ${argument.getPostsCount()}<br>
@@ -32,7 +36,6 @@ Posts: <%=course.getPostsCount()%><br>
         </tr>
     </g:each>
 </table>
-<hr>
-<%=new Date()%>
+<g:render template="../footer" />
 </body>
 </html>
