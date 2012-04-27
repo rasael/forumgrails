@@ -18,6 +18,7 @@ class UserController {
     
     def logout(){
         session.user = null
-        redirect(controller:"Course",action:"list")
+        def path = params.ref.substring(params.ref.indexOf(request.getContextPath())+request.getContextPath().length());
+        redirect(url:path)
     }
 }
