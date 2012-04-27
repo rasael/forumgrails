@@ -79,6 +79,17 @@ h1 {
 	margin: 0.8em 0 0.3em 0;
 }
 
+h2 {
+    color: #48802c;
+    font-weight: normal;
+    font-size: 0.9em;
+    margin: 0.8em 0 0.3em 0;
+}
+
+
+
+
+
 ul {
 	padding: 0;
 }
@@ -589,3 +600,17 @@ a.skip {
 	position: absolute;
 	left: -9999px;
 }
+#shift{
+    -webkit-transition-property:color,background-color,padding-left;
+    -webkit-transition-duration:5000ms,5000ms,5000ms;
+    -moz-transition-property:color,background-color,padding-left;
+    -moz-transition-duration:5000ms,5000ms,5000ms
+
+}
+#shift:hover{
+    background-color:#efefef;
+    color:#333;
+    padding-left:400px
+
+}
+

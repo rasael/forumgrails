@@ -22,7 +22,7 @@
         </ul>
 
         <ul>
-            <li><a href="#" class="top_parent">Lingua</a>
+            <li><a href="#" class="top_parent"><g:message code="forumgrails.language" /></a>
                 <ul>
                     <li><a href="?lang=en">En</a></li>
                     <li><a href="?lang=it">It</a></li>
