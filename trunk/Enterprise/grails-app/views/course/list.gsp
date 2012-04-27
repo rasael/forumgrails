@@ -8,12 +8,12 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <g:render template="../css"/>
   <title>Course list</title>
 </head>
-
 <body>
-  <h1><g:message code="forumgrails.courseList" /></h1>
+ <h1><g:message code="forumgrails.courseList" /></h1>
   <hr>
 <g:render template="../header"/>
 <hr>
