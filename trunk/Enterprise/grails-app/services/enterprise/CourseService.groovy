@@ -3,8 +3,14 @@ package enterprise
 class CourseService {
 
     static expose = ['cxf']
-    
-    Course[] getCourses() {
-        Course.list() as Course[]
+    boolean returnTrue(){
+        true
     }
+//    Course[] getCourses() {
+//        Course.list() as Course[]
+//    }
+//    
+//    def listCourses(){
+//        Course.list()
+//    }
 }

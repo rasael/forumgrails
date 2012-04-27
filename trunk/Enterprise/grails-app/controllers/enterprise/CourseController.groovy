@@ -25,7 +25,15 @@ class CourseController {
     }
     
     def doAdd() {
-        render view:"list"
+         log.println("\n\nSaving new course with params $params \n\n");
+        Course c = new Course(name:params.name)
+        c.save()
+        if(c){
+            c.save()
+            redirect action:"show",params:[id:c.id]
+        }else{
+            redirect action:"add",params:[name:params.name]
+        }
     }
     
     def add(){
