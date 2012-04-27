@@ -5,7 +5,6 @@ class BootStrap {
     def init = { servletContext ->
         
         new User(email:"forumgrails@supsi.ch",password:"forumpassword").save();
-        new User(email:"a@b.c",password:"abc").save();
         
         // Create sample objects
         if(!Argument.count()){
