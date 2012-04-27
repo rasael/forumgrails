@@ -7,4 +7,5 @@
     <g:link controller="user" action="login"><g:message code="forumgrails.login"/></g:link> -     
   </g:else>
   (<a href="?lang=en">En</a> - <a href="?lang=it">It</a>)
+<g:render template="../menu"/>
 </center>
