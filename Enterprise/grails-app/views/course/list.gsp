@@ -13,7 +13,7 @@
   <title>Course list</title>
 </head>
 <body>
- <h1>&nbsp<g:message code="forumgrails.courseList" /></h1>
+  <h1>&nbsp<g:message code="forumgrails.courseList" /></h1>
   <hr>
 <g:render template="../header"/>
 <br><br> <br>
@@ -34,7 +34,7 @@
   <g:message code="forumgrails.threads"/>: ${course.getThreadsCount()}<br>
   <g:message code="forumgrails.posts"/>: ${course.getPostsCount()}<br>
   </td>
-  <g:if test="${session.user}">
+  <g:if test="${session.user && session.user.role.ordinal() > 0}">
     <td>
     <g:link action="remove" id="${course.id}"><g:message code="forumgrails.remove" args="${[course.name]}"></g:message></g:link>
     </td>
@@ -42,13 +42,13 @@
   </tr>
 </g:each>
 </table>
-<g:if test="${session.user}">
-    &nbsp<g:link action="add"><g:message code="forumgrails.addNewCourse"/></g:link>
-    <br><br>
+<g:if test="${session.user && session.user.role.ordinal() > 0}">
+  &nbsp<g:link action="add"><g:message code="forumgrails.addNewCourse"/></g:link>
+  <br><br>
 </g:if>
 
 <hr>
-<a href="services/course?wsdl">&nbspCourse WSDL</a>
+<a href="services/course?wsdl">&nbspCourses WSDL</a>
 <hr>
 &nbsp<g:message code="forumgrails.coursesCount" args="${[Course.count()]}" default="forumgrails.nothing"/>
 <g:render template="../footer" />

@@ -21,9 +21,7 @@
     <div class="dialog">
       <p>Enter your login details below:</p>
       <g:if test="${flash.message}">
-        <br>
-        ${flash.message}
-        <br>
+        <br><center><font color="red">${flash.message}</font></center><br>
       </g:if>      
       <table class="userForm">
         <tr class='prop'>
