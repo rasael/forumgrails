@@ -16,13 +16,11 @@
 <h1><%=argument.name%></h1>
 <hr>
 <g:render template="../header"/>
-<hr>
-Threads: <%=argument.threads.size()%><br>
-Posts: <%=argument.getPostsCount()%><br>
+<br><br> <br>
 <hr>
 <table border="1" width="100%">
 
-    <tr><th>Argument name</th><th>Informations</th></tr>
+    <tr><th>Thread name</th><th>Informations</th></tr>
 
     <g:each var="thread" in="${argument.threads}">
         <tr>

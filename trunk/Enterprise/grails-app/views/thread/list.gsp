@@ -20,7 +20,7 @@
 <hr>
 <table border="1" width="100%">
   <tr><th><g:message code="forumgrails.courseName"/></th><th><g:message code="forumgrails.information"/></th></tr>
-  <g:each var="course" in="${Thread.list()}">
+  %{--<g:each var="course" in="${Thread.list()}">--}%
   <tr>
     <td style="vertical-align: top"><a href="/Enterprise/course/show?id=${thread.id}">${thread.name}</a>
       <br><ul>

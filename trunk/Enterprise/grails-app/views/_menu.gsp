@@ -24,8 +24,8 @@
         <ul>
             <li><a href="#" class="top_parent"><g:message code="forumgrails.language" /></a>
                 <ul>
-                    <li><a href="?lang=en">En</a></li>
-                    <li><a href="?lang=it">It</a></li>
+                    <li><a href="?lang=en"><g:message code="forumgrails.english" /></a></li>
+                    <li><a href="?lang=it"><g:message code="forumgrails.italian" /></a></li>
                 </ul>
             </li>
         </ul>
