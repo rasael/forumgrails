@@ -13,7 +13,7 @@
   <title>Course list</title>
 </head>
 <body>
- <h1><g:message code="forumgrails.courseList" /></h1>
+ <h1>&nbsp<g:message code="forumgrails.courseList" /></h1>
   <hr>
 <g:render template="../header"/>
 <br><br> <br>
@@ -42,13 +42,15 @@
   </tr>
 </g:each>
 </table>
-<hr>
-<a href="services/course?wsdl">Course WSDL</a>
-<hr>
-<g:message code="forumgrails.coursesCount" args="${[Course.count()]}" default="forumgrails.nothing"/>
 <g:if test="${session.user}">
-  - <g:link action="add"><g:message code="forumgrails.addNewCourse"/></g:link> (prima bisogna fare install-plugin cxf
+    &nbsp<g:link action="add"><g:message code="forumgrails.addNewCourse"/></g:link>
+    <br><br>
 </g:if>
+
+<hr>
+<a href="services/course?wsdl">&nbspCourse WSDL</a>
+<hr>
+&nbsp<g:message code="forumgrails.coursesCount" args="${[Course.count()]}" default="forumgrails.nothing"/>
 <g:render template="../footer" />
 </body>
 </html>
