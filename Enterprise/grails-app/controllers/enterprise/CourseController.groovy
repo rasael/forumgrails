@@ -3,7 +3,6 @@ package enterprise
 
 class CourseController {
 
-    //    def scaffold = Course
     static defaultAction = 'list'
     
     // Authentication interceptor
@@ -25,15 +24,19 @@ class CourseController {
     }
     
     def doAdd() {
-         log.println("\n\nSaving new course with params $params \n\n");
-        Course c = new Course(name:params.name)
-        c.save()
-        if(c){
-            c.save()
-            redirect action:"show",params:[id:c.id]
-        }else{
-            redirect action:"add",params:[name:params.name]
+        log.println("\n\nSaving new course with params $params \n\n");
+        if(params.name && params.name.trim().length() >= 3){
+            
+            Course c = new Course(name:params.name)
+            if(c){
+                c.save()                
+                redirect action:"show",params:[id:c.id]
+                return;
+            }
         }
+        flash.message = "Invalid course name";
+        redirect action:"add",params:[name:params.name]
+        
     }
     
     def add(){
