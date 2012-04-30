@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <h1><%=thread.title%></h1>
+  <h1>&nbsp;<g:link action="list" controller="Course">Home</g:link>&gt;<%=thread.title%></h1>
   <hr>
 <g:render template="../header"/>
 <br><br><center><b>Thread view</b></center> <br>
@@ -34,7 +34,7 @@
         </tr>
       </table>
 
-      <g:each var="post" in="${thread.posts}">
+      <g:each var="post" in="${thread.posts.sort{a,b -> b.date.compareTo(a.date)}}">
         <table width="100%">
           <tr>
             <td width="240px">

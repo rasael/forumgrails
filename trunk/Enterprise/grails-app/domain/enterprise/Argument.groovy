@@ -5,7 +5,7 @@ class Argument {
     String name
     static hasMany = [threads:Thread]
     static belongsTo = [course:Course]
-    static transients = ['postsCount']
+    static transients = ['postsCount','courseID']
     // Validation
     static constrains = {
         name blank:false, size:3..100,nullable:false
@@ -17,5 +17,14 @@ class Argument {
             tot += it.posts.size();
         }
         return tot;
+    }
+    
+    int getCourseID(){
+        for(Course c : Course.list()){
+            if(c.arguments.contains(this)){
+                return c.id
+            }
+        } 
+        return -1
     }
 }

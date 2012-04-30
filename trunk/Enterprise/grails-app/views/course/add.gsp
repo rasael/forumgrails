@@ -16,8 +16,11 @@
   <hr>
 <g:render template="../header"/>
 <hr>
+<g:if test="${flash.message}">
+  <br><font color="red">${flash.message}</font><br>
+</g:if>    
 <g:form action="doAdd" method="post">
-  Name: <g:textField name="name" />
+  <b>Name:</b> <g:textField name="name" value="${params.name}"/>
   <br>
   <input type="submit" value="Add"/>
 </g:form>

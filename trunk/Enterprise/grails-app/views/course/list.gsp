@@ -18,14 +18,17 @@
 <g:render template="../header"/>
 <br><br> <br>
 <hr>
+<g:if test="${flash.message}">
+  <br><center><font color="red">${flash.message}</font></center><br>
+</g:if>      
 <table border="1" width="100%">
   <tr><th><g:message code="forumgrails.courseName"/></th><th><g:message code="forumgrails.information"/></th></tr>
-<g:each var="course" in="${Course.list()}">
+<g:each var="course" in="${Course.list(sort:"name",order:"asc")}">
   <tr>
-    <td style="vertical-align: top"><a href="/Enterprise/course/show?id=${course.id}">${course.name}</a>
+    <td style="vertical-align: top"><a href="/Enterprise/course/show?id=${course.id}"><b>${course.name}</b></a>
       <br><ul>
-        <g:each var="argument" in="${course.arguments}">
-          <li><g:link action="show" id="${argument.id}">${argument.name}</g:link>      </li>
+        <g:each var="argument" in="${course.arguments.sort{a,b -> a.name.compareTo(b.name)}}">
+          <li class="sublist"><g:link controller="Argument" action="show" id="${argument.id}">${argument.name}</g:link></li>
         </g:each>
       </ul>
     </td>
@@ -34,7 +37,7 @@
   <g:message code="forumgrails.threads"/>: ${course.getThreadsCount()}<br>
   <g:message code="forumgrails.posts"/>: ${course.getPostsCount()}<br>
   </td>
-  <g:if test="${session.user && session.user.role.ordinal() > 0}">
+  <g:if test="${session.user && session.user.role.ordinal() > 1}">
     <td>
     <g:link action="remove" id="${course.id}"><g:message code="forumgrails.remove" args="${[course.name]}"></g:message></g:link>
     </td>
