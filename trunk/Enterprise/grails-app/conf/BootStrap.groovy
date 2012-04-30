@@ -4,11 +4,23 @@ class BootStrap {
 
     def init = { servletContext ->
         
-        new User(email:"forumgrails@supsi.ch",password:"forumpassword").save();
+        if(!User.count()){
+            
+            log.println("[ForumGrails] Creating fake users ...")
+            new User(email:"forumgrails@supsi.ch",password:"forumpassword",role:UserRole.Administrator).save()
+            new User(email:"forummoderator@supsi.ch",password:"forumpassword",role:UserRole.Moderator).save()
+            new User(email:"forumuser@supsi.ch",password:"forumpassword",role:UserRole.User).save()
+            
+            // to Debug
+            User.list().each{
+                log.println("[ForumGrails] User created: $it, ${it.password}, ${it.role}")
+            }
+            log.println("[ForumGrails] There is a total of ${User.count()} users in the DB.");
+        }
         
         // Create sample objects
         if(!Argument.count()){
-            log.println("Argument count is empty, creating sample objects");
+            log.println("[ForumGrails] Creating sample objects");
 
             Post post1 = new Post(text:"Sample post number one")
             post1.addToVotes(new Vote(value:1))
@@ -46,7 +58,11 @@ class BootStrap {
             course2.addToArguments(new Argument(name:'Giochi a due giocatori'))
             course2.save()
             
+            
+            log.println("[ForumGrails] There is a total of ${Argument.count()} arguments in the DB.");            
         }
+        
+        
     }
     def destroy = {
     }

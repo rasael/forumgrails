@@ -1,3 +1,2 @@
-
- <g:render template="../menu"/>
+<g:render template="../menu"/>
 <br><hr>
