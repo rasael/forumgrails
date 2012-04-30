@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<h1><%=course.name%></h1>
+<h1>&nbsp<%=course.name%></h1>
 <hr>
 <g:render template="../header"/>
 <br><br> <br>
