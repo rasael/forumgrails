@@ -6,30 +6,34 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <g:render template="../css"/>
-    <title>Argument view</title>
+  <g:render template="../css"/>
+  <title>Argument view</title>
 </head>
 
 <body>
-<h1><%=argument.name%></h1>
-<hr>
+  <h1>
+    <g:link action="list" controller="Course">Home</g:link> &gt; <%=argument.name%>
+  </h1>
+  <hr>
 <g:render template="../header"/>
-<br><br> <br>
+<br><br>
+<center><b>Argument view</b></center>
+<br>
 <hr>
 <table border="1" width="100%">
 
-    <tr><th>Thread name</th><th>Informations</th></tr>
+  <tr><th>Thread name</th><th>Informations</th></tr>
 
-    <g:each var="thread" in="${argument.threads}">
-        <tr>
-            <td style="vertical-align: top"><a href="/Enterprise/thread/show?id=${thread.id}">${thread.title}</a></td>
-            <td>
-                Posts: ${thread.posts.size()}<br>
-            </td>
-        </tr>
-    </g:each>
+  <g:each var="thread" in="${argument.threads}">
+    <tr>
+      <td style="vertical-align: top"><a href="/Enterprise/thread/show?id=${thread.id}">${thread.title}</a></td>
+      <td>
+        Posts: ${thread.posts.size()}<br>
+      </td>
+    </tr>
+  </g:each>
 </table>
 <g:render template="../footer" />
 </body>

@@ -3,32 +3,52 @@
   and open the template in the editor.
 -->
 <%@ page import="enterprise.*" %>
+<%@ page import="java.text.*" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <html>
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <g:render template="../css"/>
-    <title>Thread view</title>
+  <g:render template="../css"/>
+  <title>Thread view</title>
 </head>
 
 <body>
-<h1><%=thread.title%></h1>
-<hr>
+  <h1><%=thread.title%></h1>
+  <hr>
 <g:render template="../header"/>
-<br><br> <br>
+<br><br><center><b>Thread view</b></center> <br>
 <hr>
-<table border="1" width="100%">
+<!--<table border="1" width="100%">
 
-    <tr><th>Argument name</th><th>Informations</th></tr>
-
-    <g:each var="post" in="${thread}">
+  <tr><td>-->
+      <table width="100%">
         <tr>
-            <td style="vertical-align: top">
-              <a href="/Enterprise/argument/show?id=${thread.id}">${thread.title}</a></td>
+          <td width="240px">
+            <h5>
+              <b>User:</b> ${thread.author}<br><br>
+              <b>Date:</b> ${new SimpleDateFormat("dd.MM.yyyy").format(thread.date)}
+            </h5>
+          </td>
+          <td style="vertical-align: top"><h1><b>${thread.title}</b></h1><br><h2>${thread.text}</h2></td>
         </tr>
-    </g:each>
-</table>
+      </table>
+
+      <g:each var="post" in="${thread.posts}">
+        <table width="100%">
+          <tr>
+            <td width="240px">
+              <h5>
+                <b>User:</b> ${post.author}<br>
+                <b>Date:</b> ${new SimpleDateFormat("dd.MM.yyyy").format(post.date)}
+              </h5>
+            </td>
+            <td style="vertical-align: top"><br><h2>${post.text}</h2></td>
+          </tr>
+        </table>
+      </g:each>
+
+<!--</table>-->
 <g:render template="../footer" />
 </body>
 </html>

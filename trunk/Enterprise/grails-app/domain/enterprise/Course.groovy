@@ -7,7 +7,7 @@ class Course {
     
     static hasMany = [arguments:Argument]
 
-    static transients = ['threadsCount','getPostsCount']
+    static transients = ['threadsCount','postsCount']
 
     // Validation
     static constrains = {
@@ -29,5 +29,4 @@ class Course {
         }
         return tot;
     }
-    
 }
