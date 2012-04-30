@@ -9,10 +9,10 @@
         <ul>
             <li><a href="#" class="top_parent"><g:message code="forumgrails.courseList" /></a>
                 <ul>
-                <g:each var="course2" in="${Course.list()}">
+                <g:each var="course2" in="${Course.list().sort{a,b -> a.name.compareTo(b.name)}}">
                       <li><a href="/Enterprise/course/show?id=${course2.id}" class="parent">${course2.name}</a>
                         <ul>
-                            <g:each var="argument" in="${course2.arguments}">
+                            <g:each var="argument" in="${course2.arguments.sort{a,b -> a.name.compareTo(b.name)}}">
                             <li><a href="/Enterprise/argument/show?id=${argument.id}">${argument.name}</a></li>
                             </g:each>
                         </ul></li>

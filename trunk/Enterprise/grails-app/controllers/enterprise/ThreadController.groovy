@@ -6,7 +6,7 @@ class ThreadController {
     static defaultAction = 'list'
     
     // Authentication interceptor
-    def beforeInterceptor = [action:this.&checkUser,except:['list','show']]
+    def beforeInterceptor = [action:this.&checkUser,except:['list','show','add','doAdd']]
     
     def list(){
         render view:"list"
@@ -39,15 +39,16 @@ class ThreadController {
             if(arg && t){
                 arg.addToThreads(t)
                 arg.save()
-                redirect controller:"Argument",action:"show",params:[id:arg.id]
+                redirect controller:"Argument",action:"show", id:arg.id
                 return;
             }
             flash.message = "An error occurred creating the argument"
-            redirect action:"add",params:[course:course,title:params.title]
+            forward action:"add",params:[course:course,title:params.title]
             return
         }
-        flash.message = "Invalid argument name"
-        redirect action:"add",params:[id:course.id,title:params.title]
+        
+        flash.message = "Invalid thread title"
+        forward action:"add",params:[id:arg.id,title:params.title,text:params.text]
         
     }
     def add(){
@@ -68,13 +69,11 @@ class ThreadController {
             int argID = t.getArgumentID()
             Argument.get(argID).removeFromThreads(t)
             t.delete()
-            redirect controller:"Argument",view:"show",model:[id:argID]
+            redirect controller:"Argument",view:"show",id:argID
         }else{
-            flash.message = "An error occurred while delete a thread"
+            flash.message = "An error occurred while deleting a thread"
             redirect controller:"Course",view:"list"
         }
-        
-        
     }
     
     // Check the user authentication
