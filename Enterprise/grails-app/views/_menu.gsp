@@ -30,14 +30,25 @@
             </li>
         </ul>
         <ul>
-            <li><g:if test="${session.user}">
-                <g:link controller="user" action="logout">Logout</g:link>
+            <li>
+            <g:if test="${session.user}">
+                <g:form name="logoutForm" action="logout" controller="user" method="post">
+                  <input type="hidden" name="ref" value="${request.request.getRequestURL() + (!request?.getQueryString() ? "" : "?" + request.getQueryString())}"/>
+                   <a href="javascript:submitform()">Logout</a>
+                   <script type="text/javascript">
+                    function submitform()
+                    {
+                      document.logoutForm.submit();
+                    }
+                    </script>
+                </g:form>
             </g:if>
                 <g:else>
-                    <g:link controller="user" action="login"><g:message code="forumgrails.login"/></g:link>
+                    <g:link controller="user" action="login">
+                      <g:message code="forumgrails.login"/>
+                    </g:link>
                 </g:else>
             </li>
         </ul>
     </div> 	<!-- end the menuh-container div -->
 </div>	<!-- end the menuh div -->
-

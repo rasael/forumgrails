@@ -17,10 +17,16 @@ class UserController {
     }
     
     def logout(){
+        
         session.user = null
-        String fullURL = request.getRequestURL().append("?").append( 
-            request.getQueryString()).toString();
-        log.println("fullURL :: " + fullURL)
-        redirect(url:fullURL)
+        def path = params.ref.substring(params.ref.indexOf(request.getContextPath())+request.getContextPath().length());
+        log.println(path)
+        redirect(url:path)
+        
+//        session.user = null
+//        String fullURL = request.getRequestURL().append("?").append( 
+//            request.getQueryString()).toString();
+//        log.println("fullURL :: " + fullURL)
+//        redirect(url:fullURL)
     }
 }
