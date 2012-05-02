@@ -13,6 +13,7 @@ class BootStrap {
             usr.save()
             User tempuser = new User(email:"marco.bernasconi@supsi.ch",password:"forumpassword",role:UserRole.User)
             tempuser.save()
+        new User(email:"ch@ch.ch",password:"123456").save();
         
             // to Debug
             User.list().each{
