@@ -9,27 +9,27 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <g:render template="../css"/>
-  <title>Course view</title>
+  <title><g:message code="forumgrails.argumentsView"/></title>
 </head>
 
 <body>
   <h1>&nbsp;<g:link action="list" controller="Course">Home</g:link>&gt;<%=course.name%></h1>
   <hr>
 <g:render template="../header"/>
-<br><br> <center><b><g:message code="forumgrails.coursew"/></b></center><br>
+<br><br> <center><b><g:message code="forumgrails.argumentsView"/></b></center><br>
 
 <hr>
 <table border="1" width="100%">
 
-  <tr><th>Argument name</th><th>Informations</th></tr>
+  <tr><th><g:message code="forumgrails.argumentName"/></th><th><g:message code="forumgrails.information"/></th></tr>
   <g:each var="argument" in="${course.arguments.sort{a,b -> a.name.compareTo(b.name)}}">
     <tr>
       <td style="vertical-align: top">
         <b><a href="/Enterprise/argument/show?id=${argument.id}">${argument.name}</a></b>
       </td>
       <td>
-        Threads: ${argument.threads.size()}<br>
-        Posts: ${argument.getPostsCount()}<br>
+          <g:message code="forumgrails.threads"/>: ${argument.threads.size()}<br>
+          <g:message code="forumgrails.posts"/>: ${argument.getPostsCount()}<br>
       </td>
       <g:if test="${session.user && session.user.role.ordinal() > 1}">
         <td>
