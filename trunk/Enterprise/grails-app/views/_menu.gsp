@@ -34,13 +34,7 @@
             <g:if test="${session.user}">
                 <g:form name="logoutForm" action="logout" controller="user" method="post">
                   <input type="hidden" name="ref" value="${request.request.getRequestURL() + (!request?.getQueryString() ? "" : "?" + request.getQueryString())}"/>
-                   <a href="javascript:submitform()">Logout</a>
-                   <script type="text/javascript">
-                    function submitform()
-                    {
-                      document.logoutForm.submit();
-                    }
-                    </script>
+                  <forum:submitLink formName="logoutForm" text="Logout"/>
                 </g:form>
             </g:if>
                 <g:else>
