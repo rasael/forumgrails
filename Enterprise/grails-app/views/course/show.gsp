@@ -16,7 +16,7 @@
   <h1>&nbsp;<g:link action="list" controller="Course">Home</g:link>&gt;<%=course.name%></h1>
   <hr>
 <g:render template="../header"/>
-<br><br> <center><b>Course view</b></center><br>
+<br><br> <center><b><g:message code="forumgrails.coursew"/></b></center><br>
 
 <hr>
 <table border="1" width="100%">

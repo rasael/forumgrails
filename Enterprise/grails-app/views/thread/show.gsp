@@ -17,7 +17,7 @@
   <h1>&nbsp;<g:link action="list" controller="Course">Home</g:link>&gt;<%=thread.title%></h1>
   <hr>
 <g:render template="../header"/>
-<br><br><center><b>Thread view</b></center> <br>
+<br><br><center><b><g:message code="forumgrails.threadw"/></b></center> <br>
 <hr>
 <!--<table border="1" width="100%">
 
@@ -26,8 +26,8 @@
         <tr>
           <td width="240px">
             <h5>
-              <b>User:</b> ${thread.author}<br><br>
-              <b>Date:</b> ${new SimpleDateFormat("dd.MM.yyyy").format(thread.date)}
+              <b><g:message code="forumgrails.user"/>:</b> ${thread.author}<br><br>
+              <b><g:message code="forumgrails.date"/>:</b> ${new SimpleDateFormat("dd.MM.yyyy").format(thread.date)}
             </h5>
           </td>
           <td style="vertical-align: top"><h1><b>${thread.title}</b></h1><br><h2>${thread.text}</h2></td>
@@ -39,8 +39,8 @@
           <tr>
             <td width="240px">
               <h5>
-                <b>User:</b> ${post.author}<br>
-                <b>Date:</b> ${new SimpleDateFormat("dd.MM.yyyy").format(post.date)}
+                <b><g:message code="forumgrails.user"/>:</b> ${post.author}<br>
+                <b><g:message code="forumgrails.date"/>:</b> ${new SimpleDateFormat("dd.MM.yyyy").format(post.date)}
               </h5>
             </td>
             <td style="vertical-align: top"><br><h2>${post.text}</h2></td>
