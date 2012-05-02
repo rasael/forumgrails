@@ -18,7 +18,9 @@ class UserController {
     
     def logout(){
         session.user = null
-        def path = params.ref.substring(params.ref.indexOf(request.getContextPath())+request.getContextPath().length());
-        redirect(url:path)
+        String fullURL = request.getRequestURL().append("?").append( 
+            request.getQueryString()).toString();
+        log.println("fullURL :: " + fullURL)
+        redirect(url:fullURL)
     }
 }
