@@ -1,11 +1,12 @@
 <hr>
 <h2 align="right">
   <g:if test="${session.user}">
-    <g:message code="forumgrails.currentlyLogged" args="${[session.user,session.user.role]}" default="forumgrails.nothing"/>
+    <g:message code="forumgrails.currentlyLogged" args="${[session.user,session.user.role]}" default="forumgrails.nothing"/> &nbsp
   </g:if>
   <g:else>
-    <g:message code="forumgrails.notLoggedIn"/>
+    <g:message code="forumgrails.notLoggedIn"/> &nbsp
   </g:else>
+
 </h2>
 <hr>
 <center>

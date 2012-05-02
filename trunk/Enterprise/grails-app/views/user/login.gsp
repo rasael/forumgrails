@@ -19,7 +19,7 @@
   <g:form action="doLogin" method="post">
     <input type="hidden" name="ref" value="${request.getHeader('referer')}"/>
     <div class="dialog">
-      <p>Enter your login details below:</p>
+      <p> &nbsp Enter your login details below:</p>
       <g:if test="${flash.message}">
         <br><center><font color="red">${flash.message}</font></center><br>
       </g:if>      

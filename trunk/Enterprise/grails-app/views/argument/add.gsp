@@ -12,19 +12,21 @@
   <title><g:message code="forumgrails.addNewArgument"/></title>
 </head>
 <body>
-  <h1><g:message code="forumgrails.addNewArgument"/></h1>
+  <h1>&nbsp<g:message code="forumgrails.addNewArgument"/></h1>
   <hr>
 <g:render template="../header"/>
 <hr>
 <g:if test="${flash.message}">
   <br><font color="red">${flash.message}</font><br>
-</g:if>    
+</g:if>
+<center>
 <g:form action="doAdd" method="post">
   <input type="hidden" name="courseID" value="${course.id}"/>
-  <b>Argument:</b> ${course.name}<br>
-  <b>Name:</b> <g:textField name="name" value="${params.name}"/><br>
+   <b> &nbsp<g:message code="forumgrails.courseName"/>:&nbsp</b>${course.name}<br><br>
+   <b>&nbsp<g:message code="forumgrails.name"/>:&nbsp</b> <g:textField name="name" value="${params.name}"/><br> <br>
   <input type="submit" value="Add"/>
-</g:form>
+</g:form></center>
+<br>
 <hr>
 </body>
 </html>

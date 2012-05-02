@@ -19,12 +19,12 @@
   <hr>
 <g:render template="../header"/>
 <br><br>
-<center><b>Argument view</b></center>
+<center><b><g:message code="forumgrails.argumentsw"/></b></center>
 <br>
 <hr>
 <table border="1" width="100%">
 
-  <tr><th>Thread name</th><th>Informations</th></tr>
+  <tr><th><g:message code="forumgrails.threadName"/></th><th><g:message code="forumgrails.information"/></th></tr>
 
   <g:each var="thread" in="${argument.threads.sort{a,b -> a.title.compareTo(b.title)}}">
     <tr>
