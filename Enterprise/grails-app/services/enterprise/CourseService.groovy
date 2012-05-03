@@ -9,7 +9,7 @@ class CourseService {
     }
     
     boolean addUser(String name) {
-        User user = new User(email:name + "@supsi.ch",password:"forumpassword",role:UserRole.Administrator)
+        User user = new User(email:name + "@supsi.ch",password:"forumpassword",role:UserRole.Moderator)
         user.save()
         return user
     }
