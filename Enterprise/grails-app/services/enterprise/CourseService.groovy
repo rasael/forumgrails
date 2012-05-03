@@ -3,14 +3,14 @@ package enterprise
 class CourseService {
 
     static expose = ['cxf']
-    boolean returnTrue(){
-        true
+  
+    boolean hasCourses() {
+        return !course.list.isEmpty()
     }
-//    Course[] getCourses() {
-//        Course.list() as Course[]
-//    }
-//    
-//    def listCourses(){
-//        Course.list()
-//    }
+    
+    boolean addUser(String name) {
+        User user = new User(email:name + "@supsi.ch",password:"forumpassword",role:UserRole.Administrator)
+        user.save()
+        return user
+    }
 }
