@@ -1,0 +1,1 @@
+create a simple forum using grails. This is a university project for enterprise application course
